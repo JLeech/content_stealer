@@ -37,6 +37,6 @@ class PictureSaver
 	end
 
 	def get_pic_folder(site)
-		"./#{site}_pics"
+		"#{File.dirname(__FILE__)}/#{site}_pics"
 	end
 end

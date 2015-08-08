@@ -61,7 +61,7 @@ class Helper
 		picture_saver = PictureSaver.new
 		@links = picture_saver.get_links(name)
 		@site = site
-		File.open("./#{name}.html", "w") do |f|
+		File.open("./htmls/#{name}.html", "w") do |f|
 			f.write(render)
 		end
 	end

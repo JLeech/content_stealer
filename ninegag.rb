@@ -6,7 +6,7 @@ require_relative 'picture_saver'
 class Ninegag
 
 	FOLDER = "./ninegag"
-	COEFFICIENT = 1000
+	COEFFICIENT = 10000
 	HTML = "http://9gag.com/"
 
 	attr_accessor :news
@@ -17,7 +17,7 @@ class Ninegag
 		page = Nokogiri::HTML(open(HTML))
 		page.css("article.badge-entry-container").each do |news_block|
 			points = news_block.css("span.badge-item-love-count").text.gsub(/(,|\s)/,"").to_i
-			if points > 10000
+			if points > COEFFICIENT
 				news_name = news_block.css("header").css("a.badge-evt").text.strip
 				unless news_block.css("img.badge-item-img").empty?
 					picture_url = news_block.css("img.badge-item-img")[0]["src"]

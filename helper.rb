@@ -34,6 +34,7 @@ class Helper
 			   </HEAD>
 			   <BODY>
 			      <% @news.reverse.each_with_index do |block,index|%>
+			      
 			      <ul style="list-style-type:circle">
 					  <li>
 					  	<a href=\" <%= block[3] %>\">

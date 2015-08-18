@@ -21,7 +21,7 @@ class Pikabu
 				news_name = news_block.css("a.b-story__link").text.strip
 				news_link = news_block.css("a.b-story__link")[0]["href"]
 				picture_url = news_block.css("table.pg")[0]["lang"] 
-				unless picture_url =~ /(gif$|jpg$|png$)/
+				unless picture_url =~ /(gif$|jpg$|png$|JPG$)/
 					next if picture_url.empty? && !news_block.css("div.b-story__content_type_text")[0].to_s.empty?
 					raw_picture_url = news_block.css("div.b-video__preview")[0]["style"]
 					picture_url = format_picture_url(raw_picture_url)
